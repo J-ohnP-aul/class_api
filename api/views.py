@@ -13,7 +13,7 @@ def students_view(request):
     students = Student.objects.all()
     serializer = StudentSerializer(students, many=True)
     return Response(serializer.data)
-  
+
   elif request.method == 'POST':
     serializer = StudentSerializer(data=request.data)
     if serializer.is_valid():
